@@ -1,7 +1,9 @@
 import requests
 import json
+from dotenv import load_dotenv
 
-OLLAMA_URL = "http://172.211.240.116/v1/completions"
+load_dotenv()
+OLLAMA_URL = os.getenv("OLLAMA_URL")
 MODEL_NAME = "granite3.3:8b"
 
 def ask_model(prompt):
